@@ -1,5 +1,12 @@
 /* 前后端通信相关的配置,注释只允许使用多行方式 */
 {
+	/* 七牛配置 */
+	"qiniu-accesskey":"E0G_ZZVdh_30HiiwFPM5ENpwtB09y0R0eUkqBlMq",
+	"qiniu-secretkey":"w9c0hK27NEZgo7NxrXb2BVsdqXe_KUD-azajs0AR",
+	"qiniu-bucket":"sk-ueditor-file",
+	"qiniu-host":"http://ofqnnx2w5.bkt.clouddn.com/",
+	/* 七牛配置 */
+
     /* 上传图片配置项 */
     "imageUrl": "http://up.qiniu.com/",
     "imageActionName": "uploadimage", /* 执行上传图片的action名称 */
@@ -62,7 +69,7 @@
     "fileUrl": "http://up.qiniu.com/",
     "fileActionName": "uploadfile", /* controller里,执行上传视频的action名称 */
     "fileFieldName": "file", /* 提交的文件表单名称 */
-    "filePathFormat": "/ueditor/php/upload/file/{yyyy}{mm}{dd}/{time}{rand:6}_{filename}", /* 上传保存路径,可以自定义保存路径和文件名格式 */
+    "filePathFormat": "/ueditor/php/upload/file/{yyyy}{mm}{dd}/{time}{rand:6}", /* 上传保存路径,可以自定义保存路径和文件名格式 */
     "fileUrlPrefix": "http://ofqnnx2w5.bkt.clouddn.com/", /* 文件访问路径前缀 */
     "fileMaxSize": 512000000, /* 上传大小限制，单位B，默认500MB */
     "fileAllowFiles": [

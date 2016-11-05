@@ -8017,23 +8017,23 @@ var fillCharReg = new RegExp(domUtils.fillChar, 'g');
          * ```
          */
         getActionUrl: function(action){
-			//console.log('get action:' + action);
+			console.log('get action:' + action);
             var actionName = this.getOpt(action) || action,
                 imageUrl = this.getOpt('imageUrl'),
                 serverUrl = this.getOpt('serverUrl');
 
             if (action == "uploadfile") {
-				//console.log('upload file');
+				console.log('upload file');
                 return this.getOpt('fileUrl');
             }
 
             if (action == "uploadvideo") {
-				//console.log('upload video');
+				console.log('upload video');
                 return this.getOpt('videoUrl');
             }
 
             if (action == "uploadimage") {
-				//console.log('upload image ');
+				console.log('upload image ');
                 return imageUrl;
             }
 
@@ -23752,7 +23752,7 @@ UE.plugin.register('music', function (){
 UE.plugin.register('autoupload', function (){
 
     function sendAndInsertFile(file, editor) {
-		//console.dir(file);
+		console.dir(file);
         var me  = editor;
         //模拟数据
         var fieldName, urlPrefix, maxSize, allowFiles, actionUrl,
@@ -23833,12 +23833,12 @@ UE.plugin.register('autoupload', function (){
 		/* 获取上传七牛 token */
 		var	qiniuToken	= '';
 		$.ajax({
-			url:'http://ims.qitianzhen.cn/index.php?m=kms&c=Ueditor&a=get_ueditor_token',
+			url:'php/controller.php?action=gettoken',
 			dataType:'json',
 			async:false,
 			success: function(res){
-				//console.log('ajax get token on autoupload');
-				//console.dir(res);
+				console.log('ajax get token on autoupload');
+				console.dir(res);
 				qiniuToken	= res.token;
 			}
 		});
@@ -23858,7 +23858,7 @@ UE.plugin.register('autoupload', function (){
         xhr.open("post", url, true);
         xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
         xhr.addEventListener('load', function (e) {
-			//console.dir(e);
+			console.dir(e);
             try{
                 var json = (new Function("return " + utils.trim(e.target.response)))();
                 if (json.state == 'SUCCESS' && json.url) {
@@ -24519,12 +24519,12 @@ UE.plugin.register('simpleupload', function (){
 	/* 获取上传七牛 token */
 	var	qiniuToken	= '';
 	$.ajax({
-		url:'http://ims.qitianzhen.cn/index.php?m=kms&c=Ueditor&a=get_ueditor_token',
+		url:'php/controller.php?action=gettoken',
 		dataType:'json',
 		async:false,
 		success: function(res){
-			//console.log('ajax get token on autoupload');
-			//console.dir(res);
+			console.log('ajax get token on autoupload');
+			console.dir(res);
 			qiniuToken	= res.token;
 		}
 	});
@@ -24615,10 +24615,10 @@ UE.plugin.register('simpleupload', function (){
 			method: "POST",
 			body: new FormData(form)
 		}).then(function(response){
-			//console.dir(response);
+			console.dir(response);
 			return response.json();
 		}).then(function(data){
-			//console.dir(data);
+			console.dir(data);
 			callback(data);
 		});
 	});

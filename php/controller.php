@@ -38,14 +38,14 @@ switch ($action) {
         $result = include("action_crawler.php");
         break;
 
-	//case 'gettoken':
-	//	include("token.php");
-	//	$tk     = new qntoken();
-	//	$result = $tk->get_token();
+	case 'gettoken':
+		include("qiniu_token.php");
+		$tk     = new qntoken();
+		$result = $tk->get_token();
 
-	//	echo json_encode(array('token'=>$result));
-	//	return;
-	//	break;
+		echo json_encode(array('token'=>$result));
+		return;
+		break;
     default:
         $result = json_encode(array(
             'state'=> '请求地址出错'

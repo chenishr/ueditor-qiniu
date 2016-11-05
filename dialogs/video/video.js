@@ -719,7 +719,7 @@
                 header['X_Requested_With'] = 'XMLHttpRequest';
 
 				$.ajax({
-					url:'http://ims.qitianzhen.cn/index.php?m=kms&c=Ueditor&a=get_ueditor_token',
+					url:'../../php/controller.php?action=gettoken',
 					async:false,
 					dataType:'json',
 					success:function(res){
